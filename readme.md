@@ -1,7 +1,18 @@
 # Course List
 Fullstack webapp that allows instructors to create descriptions for courses they offer.
 
-## (!) Note (!)
+## NOTICE
+
+### Quickstart Guide
+1. Run a command-line utility, e.g. Bash (Linux Terminal)
+2. `REST API`: To run the database REST API at `http://localhost:5000`, change directory to `...\course-list\api`, and run the [Initialization Commands](#initialization-commands).
+3. `Client`: To run the client at `http://localhost:3000`, change directory to `...\course-list\client`, and run the [Initialization Commands](#initialization-commands).
+
+   #### Initialization Commands
+   ```bash
+   npm i
+   npm start
+   ```
 
 ### Security
 1. *Encryption Attempt*: Security was not part of this project's scope.  The project spec called for storing a *plain-text* password in a cookie for session managment.  For educational purposes, I decided to attempt a rudimentary, frontend-only security improvement by encrypting the password before storage.  Although my solution is ineffective without modifying the REST API, I learned a lot from implementing it, and at least I *feel* like its better than storing the password in plain-text.
