@@ -10,30 +10,42 @@ Fullstack webapp that allows instructors to create descriptions for courses they
  $ cd ~/dev/projects
  $ git clone https://github.com/jcruzaxaeon/course-list.git
 ```
+3. Perform either the [Manual Setup](#manual-setup) or [Automated Setup](#automated-setup).
 
 ### Manual Setup
-1. To start the database REST API at `http://localhost:5000`, change directory to `api` then run the initialization commands:
+1. To start the REST API database at `http://localhost:5000`, `cd` to the `api`-directory then run the initialization commands:
 ```bash
  $ cd course-list/api
  $ npm i
  $ npm run seed
  $ npm start
 ```
-2. Open a second terminal. 
-5. To start the client at `http://localhost:3000`, change directory (in the second terminal) to `client` and run the initialization commands:
+2. Open a second terminal.
+3. To start the client at `http://localhost:3000`, `cd` to the `client`-directory and run the initialization commands:
 ```bash
- $ cd ../client
+ $ cd ~/dev/projects/course-list/client
  $ npm i
  $ npm start
 ```
 
 ### Automated Setup
-1. Change directory to `{parent}/course-list`, grant permissions to the script, and run `course-list-setup.sh`:
+1. Note that the REST API database will be run in the background. Hit `Ctrl-C` twice to exit both processes in your terminal.
+2. Change directory to `{parent}/course-list`, grant permissions to the script, and run `course-list-setup.sh`:
 ```bash
  $ cd course-list
  $ chmod +x course-list-setup.sh # Grants script permissions
  $ ./course-list-setup.sh
 ```
+
+### To Run the Project after Setup
+1. `Manual`: Open 2 terminals and run `npm start` in both the `api`, and `client` directories. OR
+2. `Automatic`: `cd` to `course-list`-directory:
+```bash
+ $ cd ~/dev/projects/course-list/
+ $ chmod +x exe.sh
+ $ ./exe.sh
+```
+- Note that the REST API database will be run in the background. Hit `Ctrl-C` twice to exit both processes in your terminal.
 
 ### Security
 1. *Encryption Attempt*: Security was not part of this project's scope.  The project spec called for storing a *plain-text* password in a cookie for session managment.  For educational purposes, I decided to attempt a rudimentary, frontend-only security improvement by encrypting the password before storage.  Although my solution is ineffective without modifying the REST API, I learned a lot from implementing it, and at least I *feel* like its better than storing the password in plain-text.

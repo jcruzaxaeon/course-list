@@ -1,10 +1,7 @@
 #!/bin/bash
 
-echo 'Cloning repository from GitHub.'
-git clone https://github.com/jcruzaxaeon/course-list.git
-
 echo 'Changing directory to "api". Installing dependencies.'
-cd course-list/api || exit
+cd api || exit
 npm i
 
 echo 'Seeding database.'
