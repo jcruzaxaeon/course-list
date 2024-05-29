@@ -66,12 +66,17 @@ const CreateCourse = () => {
          // console.log(res);
          // console.log(res.text());
          let data = null;
-         try { data = await res.json(); } catch {}
+         try { data = await res.json(); } catch { }
 
          // ERROR GUARD-CLAUSES
          // (SUCCESS)
          if (res.status === 201) {
             nav('/');
+            return;
+         }
+         // Catch empty required-fields; Populate errors for <ErrorList />
+         if (res.status === 400) {
+            setErrors(data.errors);
             return;
          }
          // Catch codes != 200-series HTTP status codes
@@ -80,16 +85,10 @@ const CreateCourse = () => {
             nav('/error');
             return;
          }
-         // Catch empty required-fields; Populate errors for <ErrorList />
-         if (res.status === 400) {
-            setErrors(data.errors);
-            return;
-         }
          // (Default) Catch unexpected 200-series HTTP status codes
          addErrorMessage(`HTTP Status Code ${res.status}: ${data.msg}`);
          nav('/error');
       }
-
       catch (err) {
          // Catch network issues 
          console.log(err);

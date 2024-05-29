@@ -1,4 +1,25 @@
 /* global.css */
+
+/* Add Seaford font */
+@font-face {
+    font-family: 'Seaford';
+    src: url('fonts/seaford.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Seaford';
+    src: url('fonts/seaford-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Seaford';
+    src: url('fonts/seaford-italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -8,7 +29,7 @@ html {
 }
 
 body {
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Seaford', 'Work Sans', sans-serif;
 }
 
 h2 {
